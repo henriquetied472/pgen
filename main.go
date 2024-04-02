@@ -37,7 +37,7 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 
 	start := time.Now()
-	for range thrs {
+	for t := 0; t < thrs; t++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
